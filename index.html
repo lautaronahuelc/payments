@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Persona</th>
+          <th>Ingreso</th>
+          <th>Porcentaje Ingreso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Luciano</td>
+          <td><input id="luciano-salary" type="number" /></td>
+          <td id="luciano-salary-percent"></td>
+        </tr>
+        <tr>
+          <td>Lautaro</td>
+          <td><input id="lautaro-salary" type="number" /></td>
+          <td id="lautaro-salary-percent"></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td id="total-salary"></td>
+          <td>100%</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Gasto</th>
+          <th>Importe</th>
+          <th>Pago Luciano</th>
+          <th>Pago Lautaro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>General</td>
+          <td><input id="total-pay" type="number" /></td>
+          <td id="luciano-pay"></td>
+          <td id="lautaro-pay"></td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="main.js"></script>
+  </body>
+</html>
