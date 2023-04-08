@@ -19,19 +19,19 @@
       <tbody>
         <tr>
           <td>Luciano</td>
-          <td><input id="luciano-salary" type="number" /></td>
-          <td id="luciano-salary-percent"></td>
+          <td><input id="ingreso-luciano" type="number" /></td>
+          <td id="porcentaje-luciano"></td>
         </tr>
         <tr>
           <td>Lautaro</td>
-          <td><input id="lautaro-salary" type="number" /></td>
-          <td id="lautaro-salary-percent"></td>
+          <td><input id="ingreso-lautaro" type="number" /></td>
+          <td id="porcentaje-lautaro"></td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
           <td>Total</td>
-          <td id="total-salary"></td>
+          <td id="salario-total" class="salario-total"></td>
           <td>100%</td>
         </tr>
       </tfoot>
@@ -40,21 +40,35 @@
     <table>
       <thead>
         <tr>
-          <th>Gasto</th>
+          <th>Gastos</th>
           <th>Importe</th>
           <th>Pago Luciano</th>
           <th>Pago Lautaro</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="gastos">
         <tr>
-          <td>General</td>
-          <td><input id="total-pay" type="number" /></td>
-          <td id="luciano-pay"></td>
-          <td id="lautaro-pay"></td>
+          <td>Luciano</td>
+          <td><input type="number" /></td>
+          <td class="pago-luciano"></td>
+          <td class="pago-lautaro"></td>
+        </tr>
+        <tr>
+          <td>Lautaro</td>
+          <td><input type="number" /></td>
+          <td class="pago-luciano"></td>
+          <td class="pago-lautaro"></td>
         </tr>
       </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Total</td>
+          <td id="total-pago-luciano"></td>
+          <td id="total-pago-lautaro"></td>
+        </tr>
+      </tfoot>
     </table>
-    <script src="main.js"></script>
+
+    <script type="module" src="scripts/main.js"></script>
   </body>
 </html>
