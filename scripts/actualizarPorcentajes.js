@@ -6,7 +6,7 @@ import {
   tagIngresoTotal,
 } from "./const.js";
 import { actualizarPagos } from "./actualizarPagos.js";
-import { mostrarContenido } from "./mostrarContenido.js";
+import { formatoPorcentaje, formatoPrecio, mostrarContenido } from "./utils.js";
 
 export function actualizarPorcentajes() {
   const ingresoLuciano = parseFloat(inputIngresoLuciano.value);
@@ -16,13 +16,13 @@ export function actualizarPorcentajes() {
   const porcentajeLuciano = calcularPorcentaje(ingresoLuciano, ingresoTotal);
   const porcentajeLautaro = calcularPorcentaje(ingresoLautaro, ingresoTotal);
 
-  mostrarContenido(tagPorcentajeLuciano, porcentajeLuciano);
-  mostrarContenido(tagPorcentajeLautaro, porcentajeLautaro);
-  mostrarContenido(tagIngresoTotal, ingresoTotal);
+  mostrarContenido(tagPorcentajeLuciano, formatoPorcentaje(porcentajeLuciano));
+  mostrarContenido(tagPorcentajeLautaro, formatoPorcentaje(porcentajeLautaro));
+  mostrarContenido(tagIngresoTotal, formatoPrecio(ingresoTotal));
 
   actualizarPagos();
 }
 
 function calcularPorcentaje(ingreso, ingresoTotal) {
-  return (ingreso / ingresoTotal) * 100;
+  return ingreso / ingresoTotal;
 }

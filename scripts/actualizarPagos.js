@@ -1,27 +1,38 @@
 import {
-  tagsPagoLuciano,
-  tagspagoLautaro,
   inputIngresoLuciano,
   inputIngresoLautaro,
+  tagLucianoRecibe,
+  tagLautaroRecibe,
 } from "./const.js";
-import { mostrarContenido } from "./mostrarContenido.js";
-import { actualizarPagosTotales } from "./actualizarPagosTotales.js";
+import { actualizarDiferencia } from "./actualizarDiferencia.js";
+import { formatoPrecio, mostrarContenido } from "./utils.js";
 
 export function actualizarPagos() {
   const ingresoLuciano = parseFloat(inputIngresoLuciano.value);
   const ingresoLautaro = parseFloat(inputIngresoLautaro.value);
   const ingresoTotal = ingresoLuciano + ingresoLautaro;
 
-  calcularPagosParciales(tagsPagoLuciano, ingresoLuciano, ingresoTotal);
-  calcularPagosParciales(tagspagoLautaro, ingresoLautaro, ingresoTotal);
+  const lucianoRecibe = calcularRecibe(
+    tagLucianoRecibe,
+    ingresoLautaro,
+    ingresoTotal
+  );
+  const lautaroRecibe = calcularRecibe(
+    tagLautaroRecibe,
+    ingresoLuciano,
+    ingresoTotal
+  );
 
-  actualizarPagosTotales();
+  mostrarContenido(tagLucianoRecibe, formatoPrecio(lucianoRecibe));
+  mostrarContenido(tagLautaroRecibe, formatoPrecio(lautaroRecibe));
+
+  actualizarDiferencia();
 }
 
-function calcularPagosParciales(tags, ingresoPersona, ingresoTotal) {
-  tags.forEach((tag) => {
-    const gastoTotal = parseFloat(tag.parentElement.querySelector("input").value);
-    const pagoParcial = (ingresoPersona / ingresoTotal) * gastoTotal;
-    mostrarContenido(tag, pagoParcial);
-  });
+function calcularRecibe(tag, ingresoOtraPersona, ingresoTotal) {
+  const importeGasto = parseFloat(
+    tag.parentElement.querySelector("input").value
+  );
+
+  return (ingresoOtraPersona / ingresoTotal) * importeGasto;
 }

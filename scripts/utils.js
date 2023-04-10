@@ -1,25 +1,38 @@
-// Function that calculates who has to pay the differece
-function calculateDifference() {
-  const lucianoPay = parseFloat(
-    document.getElementById("luciano-pay").textContent
-  );
-  const lautaroPay = parseFloat(
-    document.getElementById("lautaro-pay").textContent
-  );
-  const conclusionElement = document.getElementById("conclusion");
+export function formatoNumero(texto) {
+  const textoSinPunto = texto.replace(".", "");
+  const textoFormateado = textoSinPunto.replace(",", ".");
+  let numeroFormateado;
 
-  if (isNaN(lucianoPay) || isNaN(lautaroPay) || lucianoPay === lautaroPay) {
-    conclusionElement.textContent = "";
-    return;
-  }
-
-  if (lucianoPay < lautaroPay) {
-    conclusionElement.textContent = `Conclusión: Lautaro transfiere ${
-      lautaroPay - lucianoPay
-    }`;
+  if (textoFormateado.startsWith("$")) {
+    numeroFormateado = parseFloat(textoFormateado.slice(1));
+  } else if (textoFormateado.endsWith("%")) {
+    numeroFormateado = parseFloat(textoFormateado.slice(0, -1));
   } else {
-    conclusionElement.textContent = `Conclusión: Luciano transfiere ${
-      lucianoPay - lautaroPay
-    }`;
+    numeroFormateado = parseFloat(texto);
   }
+
+  return numeroFormateado;
+}
+
+export function formatoPorcentaje(numero) {
+  return numero.toLocaleString("es-AR", {
+    style: "percent",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
+export function formatoPrecio(numero) {
+  return numero.toLocaleString("es-AR", {
+    style: "currency",
+    currency: "ARS",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
+export function mostrarContenido(tag, content) {
+  content.includes("NaN")
+    ? (tag.textContent = "-")
+    : (tag.textContent = content);
 }

@@ -1,10 +1,10 @@
 const d = document;
+
 export const inputIngresoLuciano = d.getElementById("ingreso-luciano");
 export const inputIngresoLautaro = d.getElementById("ingreso-lautaro");
 export const tagIngresoTotal = d.getElementById("ingreso-total");
 export const tagPorcentajeLuciano = d.getElementById("porcentaje-luciano");
 export const tagPorcentajeLautaro = d.getElementById("porcentaje-lautaro");
-export const tagsPagoLuciano = d.querySelectorAll(".pago-luciano");
-export const tagspagoLautaro = d.querySelectorAll(".pago-lautaro");
-export const tagPagoTotalLuciano = d.getElementById("total-pago-luciano");
-export const tagPagoTotalLautaro = d.getElementById("total-pago-lautaro");
+export const tagLucianoRecibe = d.getElementById("luciano-recibe");
+export const tagLautaroRecibe = d.getElementById("lautaro-recibe");
+export const tagDiferencia = d.getElementById("diferencia");
