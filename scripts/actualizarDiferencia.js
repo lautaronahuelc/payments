@@ -4,10 +4,6 @@ import { formatoNumero, formatoPrecio, mostrarContenido } from "./utils.js";
 export function actualizarDiferencia() {
   const lucianoRecibe = formatoNumero(tagLucianoRecibe.textContent);
   const lautaroRecibe = formatoNumero(tagLautaroRecibe.textContent);
-  
-  console.log(lucianoRecibe);
-  console.log(lautaroRecibe);
-  
   const maxRecibe = Math.max(lucianoRecibe, lautaroRecibe);
   const minRecibe = Math.min(lucianoRecibe, lautaroRecibe);
   const personaRecibe =
