@@ -13,6 +13,9 @@ export function actualizarPorcentajes() {
   const ingresoLautaro = parseFloat(inputIngresoLautaro.value);
   const ingresoTotal = ingresoLuciano + ingresoLautaro;
 
+  localStorage.setItem("ingresoLuciano", ingresoLuciano);
+  localStorage.setItem("ingresoLautaro", ingresoLautaro);
+
   const porcentajeLuciano = calcularPorcentaje(ingresoLuciano, ingresoTotal);
   const porcentajeLautaro = calcularPorcentaje(ingresoLautaro, ingresoTotal);
 
