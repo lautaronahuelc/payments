@@ -1,8 +1,9 @@
 :root {
-  --color-astronaut: #2e3f77;
+  --color-malibu: #87aafb;
+  --color-cornflower-blue: #68b2f1;
+  --color-picton-blue: #3abee4;
   --color-athens-gray: #edeef0;
   --color-white: #fefefe;
-  --color-porcelain: #f1f3f4;
   --color-coral-red: #fc3441;
   --color-black: #000000;
 }
@@ -16,7 +17,6 @@ body {
   font-family: sans-serif;
   font-size: 14px;
   color: var(--color-black);
-  background-color: var(--color-porcelain);
 }
 
 .container {
@@ -24,7 +24,7 @@ body {
   flex-direction: column;
   width: 90%;
   height: 80%;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -45,8 +45,16 @@ thead {
   color: var(--color-white);
 }
 
-thead th {
-  background-color: var(--color-astronaut);
+thead th:first-child {
+  background-color: var(--color-malibu);
+}
+
+thead th:nth-child(2){
+  background-color: var(--color-cornflower-blue);
+}
+
+thead th:last-child {
+  background-color: var(--color-picton-blue);
 }
 
 tfoot {
@@ -79,12 +87,8 @@ input {
   text-align: center;
   letter-spacing: 0.5px;
   border: none;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid var(--color-cornflower-blue);
   background-color: transparent;
-}
-
-input::placeholder {
-  color: rgba(0, 0, 0, 0.3);
 }
 
 input:focus {
