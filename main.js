@@ -1,7 +1,7 @@
-import { inputIngresoLuciano, inputIngresoLautaro } from "./scripts/const.js";
-import { actualizarPagos } from "./scripts/actualizarPagos.js";
-import { obtenerLocalStorage } from "./scripts/obtenerLocalStorage.js";
-import { actualizarPorcentajes } from "./scripts/actualizarPorcentajes.js";
+import { inputIngresoLuciano, inputIngresoLautaro } from "./js/const.js";
+import { actualizarPagos } from "./js/actualizarPagos.js";
+import { obtenerLocalStorage } from "./js/obtenerLocalStorage.js";
+import { actualizarPorcentajes } from "./js/actualizarPorcentajes.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   obtenerLocalStorage();
