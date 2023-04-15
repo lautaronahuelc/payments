@@ -1,63 +1,96 @@
+:root {
+  --color-malibu: #87aafb;
+  --color-cornflower-blue: #68b2f1;
+  --color-picton-blue: #3abee4;
+  --color-athens-gray: #edeef0;
+  --color-white: #fefefe;
+  --color-coral-red: #fc3441;
+  --color-black: #000000;
+}
+
 body {
+  margin: 0;
+  height: 100vh;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: var(--color-black);
+}
+
+.container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0 24px;
-  height: 100vh;
-  font-size: 12px;
+  height: 100%;
 }
 
 table {
-  border-collapse: collapse;
+  flex-grow: 1;
   width: 100%;
-  max-width: 700px;
-  margin-bottom: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #f5f5f5;
-  font-family: sans-serif;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+col:first-child,
+col:last-child {
+  background-color: var(--color-athens-gray);
 }
 
 thead {
-  background-color: #333;
-  color: #fff;
+  color: var(--color-white);
+}
+
+thead th:first-child {
+  background-color: var(--color-malibu);
+}
+
+thead th:nth-child(2){
+  background-color: var(--color-cornflower-blue);
+}
+
+thead th:last-child {
+  background-color: var(--color-picton-blue);
+}
+
+tfoot {
+  font-weight: 700;
+}
+
+table:first-child tfoot {
+  color: var(--color-black);
+}
+
+table:last-child tfoot {
+  color: var(--color-white);
+  background-color: var(--color-coral-red);
 }
 
 th,
 td {
-  text-align: center;
   padding: 10px;
-  border: 1px solid #ccc;
+  text-align: center;
 }
 
-tfoot td {
-  background-color: #eee;
+tr {
+  box-shadow: 0 -10px 50px 0px rgba(0, 0, 0, 0.2);
 }
 
 input {
-  width: 70%;
   padding: 5px;
-  border-radius: 5px;
+  width: 70%;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.5px;
   border: none;
+  border-bottom: 2px solid var(--color-cornflower-blue);
+  background-color: transparent;
+}
+
+input:focus {
+  border-bottom: 2px solid var(--color-coral-red);
+  outline: none;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
   margin: 0;
-}
-
-.ingreso-total,
-.pago-luciano,
-.pago-lautaro {
-  font-weight: bold;
-}
-
-@media (max-width: 700px) {
-  table {
-    max-width: 100%;
-  }
+  -webkit-appearance: none;
 }

@@ -8,62 +8,78 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th>Persona</th>
-          <th>Ingreso</th>
-          <th>Porcentaje Ingreso</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Luciano</td>
-          <td><input id="ingreso-luciano" type="number" /></td>
-          <td id="porcentaje-luciano"></td>
-        </tr>
-        <tr>
-          <td>Lautaro</td>
-          <td><input id="ingreso-lautaro" type="number" /></td>
-          <td id="porcentaje-lautaro"></td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td>Total</td>
-          <td id="ingreso-total" class="ingreso-total"></td>
-          <td>100 %</td>
-        </tr>
-      </tfoot>
-    </table>
+    <div class="container">
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Persona</th>
+            <th>Ingreso</th>
+            <th>Porcentaje Ingreso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Luciano</td>
+            <td>
+              <input id="ingreso-luciano" type="number" placeholder="$ ..." />
+            </td>
+            <td id="porcentaje-luciano"></td>
+          </tr>
+          <tr>
+            <td>Lautaro</td>
+            <td>
+              <input id="ingreso-lautaro" type="number" placeholder="$ ..." />
+            </td>
+            <td id="porcentaje-lautaro"></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td id="ingreso-total" class="ingreso-total"></td>
+            <td>100 %</td>
+          </tr>
+        </tfoot>
+      </table>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Gastos</th>
-          <th>Importe</th>
-          <th>Recibe</th>
-        </tr>
-      </thead>
-      <tbody id="gastos">
-        <tr>
-          <td>Luciano</td>
-          <td><input type="number" /></td>
-          <td id="luciano-recibe"></td>
-        </tr>
-        <tr>
-          <td>Lautaro</td>
-          <td><input type="number" /></td>
-          <td id="lautaro-recibe"></td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td>Diferencia</td>
-          <td id="diferencia" colspan="2"></td>
-        </tr>
-      </tfoot>
-    </table>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Gastos</th>
+            <th>Importe</th>
+            <th>Recibe</th>
+          </tr>
+        </thead>
+        <tbody id="gastos">
+          <tr>
+            <td>Luciano</td>
+            <td><input type="number" placeholder="$ ..." /></td>
+            <td id="luciano-recibe"></td>
+          </tr>
+          <tr>
+            <td>Lautaro</td>
+            <td><input type="number" placeholder="$ ..." /></td>
+            <td id="lautaro-recibe"></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Diferencia</td>
+            <td id="diferencia" colspan="2"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
 
     <script type="module" src="main.js"></script>
   </body>
